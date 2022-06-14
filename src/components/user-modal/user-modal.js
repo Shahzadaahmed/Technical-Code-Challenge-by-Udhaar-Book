@@ -17,14 +17,14 @@ const UserModalBox = (props) => {
     // Note: Function to close modal box...!
     const closeModalBox = () => {
         modalHandler();
-    }
+    };
 
     return (
         <View>
             <Modal
                 isVisible={modalStatus}
-                animationIn="bounce"
-                animationOut="bounceOut"
+                animationIn="fadeInUpBig"
+                animationOut="fadeOutDownBig"
                 animationOutTiming={300}
                 onBackdropPress={() => closeModalBox()}
             >
@@ -41,7 +41,7 @@ const UserModalBox = (props) => {
                         </Text>
 
                         <Text style={styles.valueText}>
-                            {data?.login}
+                            {" " + data?.login}
                         </Text>
                     </View>
 
@@ -55,7 +55,10 @@ const UserModalBox = (props) => {
                         </Text>
                     </View>
 
-                    <TouchableOpacity onPress={closeModalBox}>
+                    <TouchableOpacity
+                        onPress={closeModalBox}
+                        style={{ marginVertical: 5 }}
+                    >
                         <Text style={styles.closeBtn}>
                             Close
                         </Text>
@@ -70,7 +73,7 @@ const UserModalBox = (props) => {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: "whitesmoke",
-        height: '40%',
+        height: '35%',
         borderRadius: 8,
         padding: 20,
         borderColor: '#7051C8'
@@ -90,8 +93,7 @@ const styles = StyleSheet.create({
     valueText: {
         fontSize: 18,
         color: '#7051C8',
-        paddingLeft: 5,
-        paddingVertical: 10
+        paddingVertical: 3
     },
 
     image: {
@@ -103,8 +105,7 @@ const styles = StyleSheet.create({
     closeBtn: {
         color: 'red',
         fontSize: 20,
-        textAlign: 'right',
-        paddingTop: 30
+        textAlign: 'right'
     }
 });
 
